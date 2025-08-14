@@ -6,8 +6,8 @@ import json
 
 app = Flask(__name__)
 
-PC_MAC_ADDRESS = "AA:BB:CC:DD:EE:FF"
-PC_NAME = "Gaming PC"
+PC_MAC_ADDRESS = os.environ.get("PC_MAC_ADDRESS", "AA:BB:CC:DD:EE:FF")
+PC_NAME = os.environ.get("PC_NAME", "Gaming PC")
 
 @app.route('/')
 def index():
