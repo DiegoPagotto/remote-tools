@@ -87,6 +87,7 @@ def icon_512():
 @app.route('/wake', methods=['POST'])
 def wake_pc():
     try:
+        print(f"Sending wake signal to {PC_NAME} with MAC address {PC_MAC_ADDRESS}")
         result = subprocess.run(['wakeonlan', PC_MAC_ADDRESS], 
                               capture_output=True, text=True)
         
